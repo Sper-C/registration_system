@@ -1,15 +1,15 @@
 #include "Node Process.h"
 
-bool CheckEmpty(yrs list)
+bool CheckEmpty(List list)
 {
 	if (list.head == nullptr)
 		return true;
 	return false;
 }
 
-yrs Init_List()
+List Init_List()
 {
-	yrs l;
+	List l;
 	l.head = nullptr;
 	l.tail = nullptr;
 	return l;
@@ -23,7 +23,7 @@ yr* Init_Node(string path)
 	return s;
 }
 
-void Add_Last(yrs& list, yr* node)
+void Add_Last(List& list, yr* node)
 {
 	if (CheckEmpty(list))
 	{
@@ -36,7 +36,7 @@ void Add_Last(yrs& list, yr* node)
 		list.tail = node;
 	}
 }
-void Remove_Info(yrs& list, string path)
+void Remove_Info(List& list, string path)
 {
 	yr* move = list.head;
 	if (move->path == path)
@@ -66,7 +66,7 @@ void Remove_Info(yrs& list, string path)
 		return;
 	}
 }
-bool Output_List(yrs l)
+bool Output_List(List l)
 {
 	if (CheckEmpty(l))
 	{
@@ -88,10 +88,10 @@ bool Output_List(yrs l)
 	}
 	return true;
 }
-yrs Copy_List(yrs l)
+List Copy_List(List l)
 {
 	yr* move = l.head;
-	yrs temp = Init_List();
+	List temp = Init_List();
 	while (move != nullptr)
 	{
 		yr* add = Init_Node({ move->path });
@@ -107,10 +107,10 @@ int Create_Number(string year)
 	ss >> n;
 	return n;
 }
-void SortAscen_List(yrs & list)
+void SortAscen_List(List & list)
 {
 	//Create new list with different address
-	yrs result = Copy_List(list);
+	List result = Copy_List(list);
 	yr * curr = result.head;
 
 	yr* move = list.head;

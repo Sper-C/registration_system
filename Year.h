@@ -5,6 +5,11 @@
 #include <sstream>
 #include <fstream>
 
+struct yr {
+	string path;
+	yr* next;
+};
+
 bool File_Exist(string path);
 //Create year section
 void Input_Year(string store, string path);

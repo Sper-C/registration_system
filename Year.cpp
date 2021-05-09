@@ -149,7 +149,7 @@ int Classes_Display(string classes)
 }
 
 ////Input Year from node to file after delete//
-void ReInput_Year(string years, yrs list)
+void ReInput_Year(string years, List list)
 {
 	yr* move = list.head;
 	fstream f(years, ios::in | ios::out);
@@ -169,7 +169,7 @@ void Year_Delete(string years, int quanti)
 	int i = 1;
 	fstream f(years, ios::in | ios::out);
 	stringstream ss;
-	yrs list = Init_List();
+	List list = Init_List();
 
 	while (!f.eof()) {
 
@@ -238,7 +238,7 @@ void Year_Sort(string years)
 	int i = 1;
 	fstream f(years, ios::in | ios::out);
 	stringstream ss;
-	yrs list = Init_List();
+	List list = Init_List();
 
 	while (!f.eof())
 	{

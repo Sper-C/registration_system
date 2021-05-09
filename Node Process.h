@@ -2,18 +2,15 @@
 #include "Year.h"
 #include "Menu.h"
 
-struct yr {
-	string path;
-	yr* next;
-};
-struct yrs {
+
+struct List {
 	yr* head;
 	yr* tail;
 };
 
-yrs Init_List();
+List Init_List();
 yr* Init_Node(string path);
-void Add_Last(yrs& list, yr* node);
-bool Output_List(yrs l);
-void Remove_Info(yrs& list, string path);
-void SortAscen_List(yrs& list);
+void Add_Last(List& list, yr* node);
+bool Output_List(List l);
+void Remove_Info(List& list, string path);
+void SortAscen_List(List& list);

@@ -32,10 +32,10 @@ void Input_Class(string store, string path)
 
 //Option 1
 
-yrs Import_Class(string classes, string file)
+List Import_Class(string classes, string file)
 {
 	fstream f(file);
-	yrs list = Init_List();
+	List list = Init_List();
 
 	while (!f.eof())
 	{
