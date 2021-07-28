@@ -236,8 +236,8 @@ void Student_Course_Update(string course_path, string new_course_teacher)
 	//Lấy ra tên môn học
 	string student_folder = ".\\Students\\Students for Enrollment\\";
 	string course_string=Path_ToName(course_path);
-    int pos = course_string.find_first_of("_",0);
-	string course_name = course_string.substr(0,pos);
+    size_t pos = course_string.find_first_of("_", 0);
+	string course_name = course_string.substr(0, pos);
 	//
 	ifstream f(course_path);
 	if(f.is_open()){
@@ -256,8 +256,8 @@ void Student_Course_Update(string course_path, string new_course_teacher)
 				//Xóa dòng môn học cũ trong file student
 				string course_string = File_Line_Delete(student_path,0,line);
 				//Thay giáo viên mới
-				int size = course_string.size();
-				int pos = course_string.find_last_of("_",size);
+				size_t size = course_string.size();
+				size_t pos = course_string.find_last_of("_",size);
 				course_string.replace(pos+1,size-pos,new_course_teacher);
 				//Cập nhật (nói khác đi là chèn) vào tên môn học cũ
 				File_Line_Update(student_path,0,line,course_string);

@@ -10,7 +10,7 @@
 //@param time Chuỗi ngày tháng
 void View_Semester_Time(string time) 
 {
-	int pos = time.find_first_of(",",0);
+	size_t pos = time.find_first_of(",", 0);
 	cout<<"\t\t Begining time: "<<time.substr(0,pos)<<endl;
 	cout<<"\t\t Ending time: "<<time.substr(pos+1,time.size())<<endl;
 }
@@ -18,7 +18,7 @@ void View_Semester_Time(string time)
 //@param time Chuỗi ngày tháng
 void View_Registration_Time(string time) 
 {
-	int pos = time.find_first_of(",",0);
+	size_t pos = time.find_first_of(",", 0);
 	cout<<"\t\t Opening time: "<<time.substr(0,pos)<<endl;
 	cout<<"\t\t Closing time: "<<time.substr(pos+1,time.size())<<endl;
 }
@@ -154,7 +154,7 @@ string Semester_Selection(string year_name)
 {
 	//Hiển thị semester
 	int limited_semester = Semester_Display(year_name);
-	if(limited_semester==0) return "OUT";
+	if(limited_semester == 0) return "OUT";
 	//Chọn lựa semester
 	cout<<"\t\t Press '-1' if you want to exit"<<endl;
 	cout<<"\t\t Choose semester to modify: ";
@@ -163,9 +163,8 @@ string Semester_Selection(string year_name)
 
 	string semester_folder = ".\\Semesters\\" + year_name + "\\";
 	string seasons[3] = { "-Autumn","-Spring","-Summer" };
-	int count=0;
-	
-	for(int i =1;i<=3;i++)
+	int count = 0;
+	for(int i = 1; i <= 3; i++)
 	{
 		//Tạo đường dẫn tới semester và lấy đường dẫn của nó
 		string semester_name = Extension(year_name + seasons[i-1],1);
@@ -179,6 +178,7 @@ string Semester_Selection(string year_name)
 			}
 		}
 	}
+	//chay het vong lap nhung van khong return thi sao?
 }
 //*Xử lý các tính năng của semester	
 //@param year_name Năm hiện tại @param dmy Dữ liệu thời gian hiện tại
@@ -188,7 +188,7 @@ bool Semester_Proc(string year_name,date dmy,int option)
 {
 	//!Năm học này là năm học hiện tại (không phải được chọn)
 	string year_path = Make_Path(".\\Years\\",year_name);
-	if(File_Exist(year_path)==false && option !=3)
+	if(File_Exist(year_path) == false && option != 3)
 	{
 		cout<<"\t\t This year was not created"<<endl;
 		cout<<"\t\t ";system("pause");

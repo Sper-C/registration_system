@@ -74,12 +74,12 @@ string Date_toString(date dmy)
 date String_ToDate(string dmy)
 {
 	date result;
-	int length = dmy.length();
+	size_t length = dmy.length();
 	int i = 1;
 	string arr[3];
 	while(i < 2)
 	{
-		int pos = dmy.find_first_of("/", 0);
+		size_t pos = dmy.find_first_of("/", 0);
 		string temp = dmy.substr(0, pos);
 		arr[i++]= temp;
 		dmy = dmy.substr((uint64_t)pos + 1, length);
@@ -97,13 +97,13 @@ date String_ToDate(string dmy)
 Student String_ToStudent(string info, string arr[8])
 {
 	Student s;
-	int length = info.length();
+	size_t length = info.length();
 	int k = 0;
 	string temp = info;
 	string a[8];
 	while (k < 7)
 	{
-		int pos = info.find_first_of(",", 0);
+		size_t pos = info.find_first_of(",", 0);
 		string temp2 = info.substr(0, pos);
 		info = info.substr((uint64_t)pos + 1, length);
 		a[k++] = temp2;
@@ -116,7 +116,7 @@ Student String_ToStudent(string info, string arr[8])
 	s.birthdate = a[5];
 	s.socialID = stoi(a[6]);
 	s.user.username = a[1];
-	int pos = temp.find_last_of(",", temp.size());
+	size_t pos = temp.find_last_of(",", temp.size());
 	s.user.password = temp.substr((uint64_t)pos + 1, temp.size() - pos);
 	return s;
 }
@@ -137,11 +137,11 @@ string Student_ToString(Student s)
 Course String_ToCourse(string info, string arr[7])
 {
 	Course c;
-	int length = info.size();
+	size_t length = info.size();
 	int i = 0;
 	while (i <= 6)
     {
-        int pos = info.find_first_of(",", 0);
+        size_t pos = info.find_first_of(",", 0);
         string temp = info.substr(0, pos);
 		if(i<6)
 		{
@@ -175,12 +175,12 @@ string Course_ToString(Course c)
 //@return Tên môn học
 string CourseString_To_CourseName(string course_string)
 {
-	int pos = course_string.find_first_of(",",0);
+	size_t pos = course_string.find_first_of(",",0);
 	course_string.replace(pos,1,"/");
-	int pos2 = course_string.find_first_of(",",0);
+	size_t pos2 = course_string.find_first_of(",",0);
 	course_string.replace(pos2,1,"_");
-	int pos3 = course_string.find_first_of(",",0);
-	return course_string.substr((double)pos+1,(double)pos3-pos-1);
+	size_t pos3 = course_string.find_first_of(",",0);
+	return course_string.substr((unsigned __int64)pos+1,(unsigned __int64)pos3-pos-1);
 }
 //*Thay đổi 1 ký tự trong chuỗi thành ký tự khác
 //@param &s chuỗi cần thay thế ký tự
@@ -189,7 +189,7 @@ string CourseString_To_CourseName(string course_string)
 void String_Replace(string &s, string target, string change)
 {
 	string temp = s;
-	int pos = 0;
+	size_t pos = 0;
 	while(pos != string::npos)
 	{
 		pos = temp.find_first_of(target, 0);

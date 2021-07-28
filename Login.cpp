@@ -5,7 +5,7 @@
 string delete_last(string s)
 {
 	string ss = s;
-	int n = size(s) - 1;
+	size_t n = size(s) - 1;
 	s = "";
 	for (int i = 0; i < n; i++)
 	{
@@ -115,7 +115,7 @@ string account(Account info)
 }
 string split_acc_stu(string &s)
 {
-	int n=size(s);
+	size_t n = size(s);
 	int c=0;
 	for(int i=n-1;i>=0;i--)
 	{

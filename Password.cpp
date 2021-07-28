@@ -4,8 +4,8 @@
 //String proccess
 bool compare(string s1, string s2)
 {
-	int n = size(s1);
-	int m = size(s2);
+	size_t n = size(s1);
+	size_t m = size(s2);
 	if (n == m)
 	{
 		for (int i = 0; i < n; i++)
@@ -23,7 +23,7 @@ void split_string(string s, string& s1, string& s2)
 {
 	int k = 0;
 	int j = 0;
-	int n = size(s);
+	size_t n = size(s);
 	for (int i = 0; i < n; i++)
 	{
 		if ((s[i] != ',') && (k == 0))
@@ -139,7 +139,7 @@ void change_pass_in_file(string username, string pass)
 			if (compare(usr,username) == true)
 			{
 				f1 = "";
-				int n = size(pass);
+				size_t n = size(pass);
 				for (int i = 0; i < n; i++)
 				{
 					psw += pass[i];
