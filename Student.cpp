@@ -206,9 +206,9 @@ void Student_Export(string semester_path, string faculty)
     int choice = Course_Select(semester_path,faculty);
     if (choice == 0) return;
     //Tạo đường dẫn đến file môn học
-    string course_string = File_Line_Seek(semester_path,2,choice);
+    string course_string = File_Line_Seek(semester_path, 2, choice);
     string info[7];
-    Course c = String_ToCourse(course_string,info);
+    Course c = String_ToCourse(course_string, info);
     string course_folder = ".\\Courses\\" + faculty + "\\";
     string course_name = c.name + "_" + c.teacher;
     string course_path = Make_Path(course_folder, course_name);

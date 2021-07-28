@@ -45,7 +45,7 @@ void enter_showpass(Account &info)
 }
 void enter_hidepass(Account &info)
 {
-	cin.ignore();
+	cin.clear();
 	cout << "\t\t Enter password (No spacebar and special symbols in your password): ";
 	string ss = "";
 	char a = _getch();
