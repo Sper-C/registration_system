@@ -7,15 +7,18 @@
 //@return kết quả của chuỗi sau khi thêm/cắt
 string Extension(string name, int option)
 {
-	//Nếu option là 1: thêm phần đuôi ".csv"
 	if (option == 1) {
-		return name + ".csv";
+		size_t found = name.find(".csv");
+		if (found == -1) {
+			return name + ".csv";
+		}
+		else {
+			return name;
+		}
 	}
-	//Nếu option là 2: cắt phần đuôi
 	else {
-		size_t pos = 0;
-		pos = name.find_last_of(".");
-		return name.substr(0, pos);
+		size_t find = name.find_last_of(".");
+		return name.substr(0, find);
 	}
 }
 

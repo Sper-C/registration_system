@@ -9,6 +9,7 @@
 
 void Score_Import()
 {
+    cout << "WARNING: The score file must be in the direction: .\\Students\\Students' ScoreBoard\\Import\\" << endl;
     string folder = ".\\Students\\Students' ScoreBoard\\Import\\";
     string import = File_Import(folder);
     vector<string> list = File_ToVector(import);
