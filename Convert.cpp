@@ -17,8 +17,9 @@ string Extension(string name, int option)
 		}
 	}
 	else {
-		size_t find = name.find_last_of(".");
-		return name.substr(0, find);
+		size_t pos = 0;
+		pos = name.find_last_of(".");
+		return name.substr(0, pos);
 	}
 }
 
